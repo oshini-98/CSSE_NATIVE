@@ -9,10 +9,18 @@ import {
   StyleSheet,
   TouchableOpacity,
 } from 'react-native';
-//import Login from './src/components/login';
-// import Navigator from './src/components/HomeStack'
 
-const Profile = props => {
+
+const Profile = ({navigation}) => {
+
+  const viewHistory = () => {
+      navigation.navigate('Reciept');
+  };
+
+  const topUP = () => {
+    navigation.navigate('topUP');
+  }
+
   return (
     <TouchableWithoutFeedback
       onPress={() => {
@@ -45,11 +53,11 @@ const Profile = props => {
           </View>
 
           <View style={styles.btn}>
-              <TouchableOpacity>
+              <TouchableOpacity onPress={topUP}>
                 <Text style={styles.btnText}>TOP UP</Text>
               </TouchableOpacity>
               
-              <TouchableOpacity>
+              <TouchableOpacity onPress={viewHistory}>
                 <Text style={styles.btnText}>HISTORY</Text>
               </TouchableOpacity>
 

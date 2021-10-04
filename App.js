@@ -6,14 +6,13 @@ import Profile from './src/screens/profile';
 import PjComletion from './src/screens/pjCompletion';
 import JReceipt from './src/screens/jReceipt';
 import RSmartCard from './src/screens/rSmartCard';
+import Navigator from './src/components/HomeStack';
 
 const App = (props) => {
   return (
-  // <Login/>
-  // <Profile/>
-  // <PjComletion/>
-  <JReceipt/>
-  // <RSmartCard/>
+    <>
+  <Navigator/>
+  </>
   )
 }
 export default App;
