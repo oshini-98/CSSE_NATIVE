@@ -7,6 +7,7 @@ import {
   Image,
   TouchableOpacity,
   StyleSheet,
+  Keyboard,
 } from 'react-native';
 //import Login from './src/components/login';
 // import Navigator from './src/components/HomeStack'

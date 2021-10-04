@@ -8,6 +8,7 @@ import {
   Image,
   TextInput,
   TouchableOpacity,
+  Keyboard,
   // Feather
 } from 'react-native';
 //import Login from './src/components/login';
@@ -28,7 +29,6 @@ const Login = props => {
             <View style={styles.card}></View>
           </ImageBackground> */}
           <View style={styles.card}>
-
             <View style={styles.cardImage}>
               <Image
                 style={styles.image}
@@ -42,17 +42,17 @@ const Login = props => {
                   placeholder="Enter User Name/ Smart Card No"
                   style={styles.inputField}
                 />
-                </View>
+              </View>
 
-                <View style={styles.ipt}>
+              <View style={styles.ipt}>
                 <TextInput
                   placeholder="Enter Password"
                   style={styles.inputField}
-                 />
-                 </View>
-                 <View>
-                   <Text style={styles.picker}></Text>
-              <Text style={styles.txt1}>Remember Me</Text>
+                />
+              </View>
+              <View>
+                <Text style={styles.picker}></Text>
+                <Text style={styles.txt1}>Remember Me</Text>
               </View>
             </View>
 
@@ -64,11 +64,9 @@ const Login = props => {
               <TouchableOpacity style={styles.btnText}>
                 <Text style={styles.btn}>SCAN QR</Text>
               </TouchableOpacity>
-
             </View>
 
             <View style={styles.bImg}></View>
-
           </View>
         </View>
       </ScrollView>
@@ -110,13 +108,13 @@ const styles = StyleSheet.create({
   },
   inputField: {
     flex: 1,
-     alignItems: 'center',
+    alignItems: 'center',
     borderColor: 'blue',
     marginTop: 10,
     paddingLeft: 10,
     color: '#05375a',
     textShadowColor: 'gray',
-    fontSize: 20
+    fontSize: 20,
   },
   inputs: {
     flex: 0.3,
@@ -127,7 +125,7 @@ const styles = StyleSheet.create({
     // backgroundColor: 'red',
   },
   btn: {
-    color: '#fff'
+    color: '#fff',
   },
   bImg: {
     flex: 0.2,
@@ -136,19 +134,18 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     color: 'blue',
-    fontSize: 20
-
+    fontSize: 20,
   },
   txt2: {
     color: 'black',
-    fontSize: 20
+    fontSize: 20,
   },
   picker: {
-    flex: 0.2
+    flex: 0.2,
   },
   btnText: {
     alignItems: 'center',
-    backgroundColor: "blue",
+    backgroundColor: 'blue',
     padding: 15,
     width: 200,
     marginVertical: 10,
@@ -156,18 +153,13 @@ const styles = StyleSheet.create({
   },
   ipt: {
     marginBottom: 20,
-    borderBottomWidth: 1,
-    borderBottomColor: '#f2f2f2',
-    borderTopWidth: 1,
-    borderTopColor: '#f2f2f2',
-    borderLeftWidth: 1,
-    borderLeftColor: '#f2f2f2',
-    borderRightWidth: 1,
-    borderRightColor: '#f2f2f2',
+    borderWidth: 1,
+    borderColor: '#f2f2f2',
     height: 60,
-    
+    width: 300,
+
     // backgroundColor: 'gray',
-  }
+  },
 });
 
 export default Login;

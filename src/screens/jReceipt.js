@@ -6,8 +6,9 @@ import {
   TouchableWithoutFeedback,
   Image,
   TextInput,
-  Button,
+  Keyboard,
   StyleSheet,
+  TouchableOpacity,
 } from 'react-native';
 //import Login from './src/components/login';
 // import Navigator from './src/components/HomeStack'
@@ -26,68 +27,70 @@ const JReceipt = props => {
             resizeMode="cover">
             <View style={styles.card}></View>
           </ImageBackground> */}
-          <View style={styles.cardImage}>
-            <Image 
-            style={styles.image}
-            source={require('../asserts/Images/logo.png')} />
-          </View>
 
-          <View style={styles.card2}>
-          <View style={styles.set}>
-              <View style={styles.set1}>
-                <Text style={styles.txt5}></Text>
+          <View style={styles.topView}></View>
+ 
+            <View style={styles.card2}>
+              <View style={styles.set}>
+                <View style={styles.set1}>
+                  <Text style={styles.txt5}></Text>
+                </View>
+                <View style={styles.set2}>
+                  <Text style={styles.txt6}>TOTAL : LKR 70.00</Text>
+                </View>
               </View>
-              <View style={styles.set2}>
-                <Text style={styles.txt6}>TOTAL : LKR 70.00</Text>
-              </View>
-            </View>
 
-            <View style={styles.set}>
-              <View style={styles.set1}>
-                <Text style={styles.txt1}>ARALIYA TRAVALS</Text>
-                <Text style={styles.txt2}>COLOMBO-GALLE 02</Text>
+              <View style={styles.set}>
+                <View style={styles.set1}>
+                  <Text style={styles.txt1}>ARALIYA TRAVALS</Text>
+                  <Text style={styles.txt2}>COLOMBO-GALLE 02</Text>
+                </View>
+                <View style={styles.set2}>
+                  <Text style={styles.txt1}>LUXURY</Text>
+                </View>
               </View>
-              <View style={styles.set2}>
-                <Text style={styles.txt1}>LUXURY</Text>
-              </View>
-            </View>
 
-            <View style={styles.set}>
-              <View style={styles.set1}>
-                <Text style={styles.txt3}>Colombo Fort</Text>
-                <Text style={styles.txt4}>13:20</Text>
+              <View style={styles.set}>
+                <View style={styles.set1}>
+                  <Text style={styles.txt3}>Colombo Fort</Text>
+                  <Text style={styles.txt4}>13:20</Text>
+                </View>
+                <View style={styles.set2}>
+                  <Text style={styles.txt3}>Panadura</Text>
+                  <Text style={styles.txt4}>13:54</Text>
+                </View>
               </View>
-              <View style={styles.set2}>
-                <Text style={styles.txt3}>Panadura</Text>
-                <Text style={styles.txt4}>13:54</Text>
-              </View>
-            </View>
 
-            <View style={styles.set}>
-              <View style={styles.set1}>
-                <Text style={styles.txt5}>WP NA-5308</Text>
+              <View style={styles.set}>
+                <View style={styles.set1}>
+                  <Text style={styles.txt5}>WP NA-5308</Text>
+                </View>
+                <View style={styles.set2}>
+                  <Text style={styles.txt4}>11/09/2021</Text>
+                </View>
               </View>
-              <View style={styles.set2}>
-                <Text style={styles.txt4}>11/09/2021</Text>
-              </View>
-            </View>
 
-            <View style={styles.set}>
-              <View style={styles.set1}>
-                <Text style={styles.txt2}>27KM</Text>
+              <View style={styles.set}>
+                <View style={styles.set1}>
+                  <Text style={styles.txt2}>27KM</Text>
+                </View>
+                <View style={styles.set2}>
+                  <Text style={styles.txt2}>RECEIPT ID : #09383674</Text>
+                </View>
               </View>
-              <View style={styles.set2}>
-                <Text style={styles.txt2}>RECEIPT ID : #09383674</Text>
-              </View>
-            </View>
-         </View>
 
-            <View>
-              <Text>QR IMAGE</Text>
+              <View style={styles.cardImage}>
+                <Image
+                  style={styles.image}
+                  source={require('../asserts/Images/logo.png')}
+                />
+              </View>
             </View>
 
           <View>
-            <Button title="SAVE" borderRadius="10" />
+            <TouchableOpacity style={styles.btnText}>
+              <Text style={styles.btn}>SAVE</Text>
+            </TouchableOpacity>
           </View>
         </View>
       </ScrollView>
@@ -98,32 +101,30 @@ const JReceipt = props => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#fff',
     // alignItems: 'center',
     // justifyContent: 'center',
     alignItems: 'center',
   },
-  card: {
-    flex: 1,
-    // justifyContent: 'center',
-    alignItems: 'center',
-    paddingVertical: 20,
-    // paddingHorizontal: 50,
-    backgroundColor: '#fff',
-    marginTop: 60,
-    height: 650,
-    width: 370,
+  topView: {
+    // flex: 0.3,
+    backgroundColor: 'blue',
+    height: 170,
+    width: 450,
   },
   card2: {
+    alignItems: 'center',
     backgroundColor: '#fff',
     paddingHorizontal: 10,
     paddingVertical: 10,
     marginHorizontal: 20,
-    marginTop: 10,
+    marginTop: -80,
     marginBottom: 40,
-    height: 400,
+    height: 500,
     width: 370,
     borderColor: 'gray',
     borderWidth: 0.3,
+    borderRadius: 5,
   },
   set: {
     flexDirection: 'row',
@@ -137,21 +138,27 @@ const styles = StyleSheet.create({
   set2: {
     flex: 0.5,
     alignItems: 'flex-end',
-    fontWeight: 'bold'
+    fontWeight: 'bold',
   },
   cardImage: {
-    flex: 0.2,
     justifyContent: 'center',
     alignItems: 'center',
+    height: 150,
+    width: 150,
+    marginTop: 40,
+    borderColor: 'red',
+    borderWidth: 2
     // backgroundColor: 'red',
-    paddingBottom: 80,
+    // paddingBottom: 60,
   },
   image: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    width: 200,
-    height: 70,
+    width: 150,
+    height: 150,
+    // borderColor: 'red',
+    // berderWidth: 2
   },
   inputs: {
     flex: 0.3,
@@ -207,11 +214,11 @@ const styles = StyleSheet.create({
   },
   btnText: {
     alignItems: 'center',
-    backgroundColor: 'blue',
-    height: 60,
+    backgroundColor: 'darkblue',
+    height: 65,
     padding: 15,
-    width: 200,
-    // marginVertical: 10,
+    width: 170,
+    marginTop: 20,
     borderRadius: 30,
   },
   ipt: {
@@ -229,4 +236,5 @@ const styles = StyleSheet.create({
     // backgroundColor: 'gray',
   },
 });
+
 export default JReceipt;
