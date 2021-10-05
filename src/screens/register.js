@@ -9,9 +9,24 @@ import {
   TextInput,
   StyleSheet,
   TouchableOpacity,
+  Button,
 } from 'react-native';
 
-const Register = props => {
+import {Formik} from 'formik';
+import axios from 'axios';
+
+const Register = (props) => {
+  // const initialValues ={
+  // user_id:"",
+  // name:"",
+  // date_of_birth:"",
+  // phone:"",
+  // address:"",
+  // nic:"",
+  // user_type:"",
+  // active_status:"true",
+  // }
+
   return (
     <TouchableWithoutFeedback
       onPress={() => {
@@ -34,38 +49,94 @@ const Register = props => {
               />
             </View>
 
-            <View style={styles.ipt}>
-              <TextInput placeholder="User ID" style={styles.inputField} />
-            </View>
+            <Formik
+              initialValues={{
+                user_id: '',
+                name: '',
+                date_of_birth: '',
+                phone: '',
+                address: '',
+                nic: '',
+                user_type: 'Registered User',
+                active_status: 'true',
+              }}
+              onSubmit={values => {
+                console.log('data', values)
+                axios
+                  .post('http://localhost:8080/addLocalPassenger', values)
+                  // .then(res => res.json());
+                  .then((response) => { return response.json() } ) 
+                  .catch((error) => console.warn("fetch error:", error))
+                  .then((response) => {
+                    console.log(response)
+                  })
+              }}>
 
-            <View style={styles.ipt}>
-              <TextInput placeholder="Name" style={styles.inputField} />
-            </View>
+              {props => (
+              <View>
+              <View style={styles.ipt}>
+                <TextInput
+                  placeholder="User ID"
+                  style={styles.inputField}
+                  onChangeText={props.handleChange('user_id')}
+                  value={props.values.user_id}
+                />
+              </View>
 
-            <View style={styles.ipt}>
-              <TextInput
-                placeholder="Date of Birth"
-                style={styles.inputField}
-              />
-            </View>
+              <View style={styles.ipt}>
+                <TextInput
+                  placeholder="Name"
+                  style={styles.inputField}
+                  onChangeText={props.handleChange('name')}
+                  value={props.values.name}
+                />
+              </View>
 
-            <View style={styles.ipt}>
-              <TextInput placeholder="Phone" style={styles.inputField} />
-            </View>
+              <View style={styles.ipt}>
+                <TextInput
+                  placeholder="Date of Birth"
+                  style={styles.inputField}
+                  onChangeText={props.handleChange('date_of_birth')}
+                  value={props.values.date_of_birth}
+                />
+              </View>
 
-            <View style={styles.ipt}>
-              <TextInput placeholder="Address" style={styles.inputField} />
-            </View>
+              <View style={styles.ipt}>
+                <TextInput
+                  placeholder="Phone"
+                  style={styles.inputField}
+                  onChangeText={props.handleChange('phone')}
+                  value={props.values.phone}
+                />
+              </View>
 
-            <View style={styles.ipt}>
-              <TextInput placeholder="NIC Number" style={styles.inputField} />
-            </View>
+              <View style={styles.ipt}>
+                <TextInput
+                  placeholder="Address"
+                  style={styles.inputField}
+                  onChangeText={props.handleChange('address')}
+                  value={props.values.address}
+                />
+              </View>
 
-            <View>
-              <TouchableOpacity style={styles.btnText}>
-                <Text style={styles.btn}>REGISTER</Text>
-              </TouchableOpacity>
-            </View>
+              <View style={styles.ipt}>
+                <TextInput
+                  placeholder="NIC Number"
+                  style={styles.inputField}
+                  onChangeText={props.handleChange('nic')}
+                  value={props.values.nic}
+                />
+              </View>
+
+              <View>
+                {/* <TouchableOpacity style={styles.btnText} title="Submit" onPress={props.handleSubmit} >
+                  <Text style={styles.btn}>REGISTER</Text>
+                </TouchableOpacity> */}
+                <Button title="Submit" onPress={props.handleSubmit} >Register</Button>
+              </View>
+              </View>
+                    )}
+            </Formik>
           </View>
         </View>
       </ScrollView>
@@ -140,7 +211,6 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 20,
     fontWeight: 'bold',
-
   },
   bImg: {
     flex: 0.2,
@@ -184,7 +254,7 @@ const styles = StyleSheet.create({
   },
   btnText: {
     alignItems: 'center',
-    backgroundColor: "blue",
+    backgroundColor: 'blue',
     height: 60,
     padding: 15,
     width: 200,

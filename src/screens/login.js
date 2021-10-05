@@ -13,7 +13,12 @@ import {
 //import Login from './src/components/login';
 // import Navigator from './src/components/HomeStack'
 
-const Login = props => {
+const Login = ({navigation}) => {
+
+  const signUP =() => {
+    navigation.navigate('SignUP')
+  }
+
   return (
     <TouchableWithoutFeedback
       onPress={() => {
@@ -52,11 +57,11 @@ const Login = props => {
                  </View>
                  <View>
                    <Text style={styles.picker}></Text>
-              <Text style={styles.txt1}>Remember Me</Text>
+              <Text style={styles.txt1} onPress={signUP} >Create Account</Text>
               </View>
             </View>
 
-            <View style={styles.btn}>
+            <View style={styles.lgBtns}>
               <TouchableOpacity style={styles.btnText}>
                 <Text style={styles.btn}>LOGIN</Text>
               </TouchableOpacity>
@@ -126,8 +131,12 @@ const styles = StyleSheet.create({
     // paddingBottom: 5
     // backgroundColor: 'red',
   },
+  lgBtns:{
+    marginTop:150,
+  },
   btn: {
-    color: '#fff'
+    color: '#fff',
+  
   },
   bImg: {
     flex: 0.2,
@@ -141,14 +150,15 @@ const styles = StyleSheet.create({
   },
   txt2: {
     color: 'black',
-    fontSize: 20
+    fontSize: 20,
+
   },
   picker: {
     flex: 0.2
   },
   btnText: {
     alignItems: 'center',
-    backgroundColor: "blue",
+    backgroundColor: "#009AE0",
     padding: 15,
     width: 200,
     marginVertical: 10,

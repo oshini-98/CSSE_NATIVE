@@ -7,12 +7,19 @@ import Profile from '../screens/profile';
 import PjComletion from '../screens/pjCompletion';
 import JReceipt from '../screens/jReceipt';
 import RSmartCard from '../screens/rSmartCard';
+import Register from '../screens/register';
 
 const screens = {
   Home: {
-    screen: Profile,
+    screen: Login,
     navigationOptions: {
       headerTitle: () => <Header title="SHUTTLE HOME" />,
+    },
+  },
+  SignUP: {
+    screen: Register,
+    navigationOptions: {
+      headerTitle: () => <Header title="SIGN UP" />,
     },
   },
   Reciept: {
@@ -38,7 +45,7 @@ const screens = {
 const HomeStack = createStackNavigator(screens, {
   defaultNavigationOptions: {
     headerTintColor: '#444',
-    headerStyle: {backgroundColor: '#2553A8', height: 60},
+    headerStyle: {backgroundColor: '#009AE0', height: 60},
   },
 });
 
