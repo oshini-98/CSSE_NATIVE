@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
   },
   topView: {
     // flex: 0.3,
-    backgroundColor: 'blue',
+    backgroundColor: '#009AE0',
     height: 170,
     width: 450,
   },
@@ -198,7 +198,7 @@ const styles = StyleSheet.create({
   },
   btnText: {
     alignItems: 'center',
-    backgroundColor: 'darkblue',
+    backgroundColor: '#009AE0',
     height: 55,
     padding: 10,
     width: 170,

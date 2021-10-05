@@ -68,6 +68,10 @@ const PjComletion = props => {
 
           <View>
           <TouchableOpacity style={styles.btnText}>
+          <Image
+                  style={styles.addImage}
+                  source={require('../asserts/Images/outline_text_snippet_white_24dp.png')}
+                />
                 <Text style={styles.btn}>GET TICKET</Text>
               </TouchableOpacity>
           </View>
@@ -133,6 +137,14 @@ const styles = StyleSheet.create({
     width: 200,
     height: 70,
   },
+    addImage: {
+    flex: 0.5,
+    width: 30,
+    height: 30,
+    borderColor: 'gray',
+    borderWidth: 1
+    // marginHorizontal: 45,
+  },
   inputs: {
     flex: 0.3,
     // marginTop: 10,
@@ -145,6 +157,7 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 20,
     fontWeight: 'bold',
+    marginLeft: 10
 
   },
   bImg: {
@@ -154,7 +167,7 @@ const styles = StyleSheet.create({
     // paddingTop: 70,
     fontSize: 25,
     fontWeight: 'bold',
-    color: 'blue'
+    color: '#068CCB'
   },
   txt1: {
     fontSize: 20,
@@ -182,8 +195,9 @@ const styles = StyleSheet.create({
     flex: 0.2
   },
   btnText: {
+    flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: "blue",
+    backgroundColor: "#068CCB",
     height: 60,
     padding: 15,
     width: 200,

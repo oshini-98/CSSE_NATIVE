@@ -33,10 +33,14 @@ const JReceipt = props => {
             <View style={styles.card2}>
               <View style={styles.set}>
                 <View style={styles.set1}>
-                  <Text style={styles.txt5}></Text>
+                {/* <Image
+                  style={styles.addImage}
+                  source={require('../asserts/Images/outline_history_black_24dp.png')}
+                /> */}
+              <Text style={styles.txt6}>TOTAL </Text>
                 </View>
                 <View style={styles.set2}>
-                  <Text style={styles.txt6}>TOTAL : LKR 70.00</Text>
+                  <Text style={styles.txt6}> LKR 70.00</Text>
                 </View>
               </View>
 
@@ -108,7 +112,7 @@ const styles = StyleSheet.create({
   },
   topView: {
     // flex: 0.3,
-    backgroundColor: 'blue',
+    backgroundColor: '#009AE0',
     height: 170,
     width: 450,
   },
@@ -134,6 +138,7 @@ const styles = StyleSheet.create({
   set1: {
     flex: 0.5,
     alignItems: 'flex-start',
+    
   },
   set2: {
     flex: 0.5,
@@ -159,6 +164,14 @@ const styles = StyleSheet.create({
     height: 150,
     // borderColor: 'red',
     // berderWidth: 2
+  },
+  addImage: {
+    flex: 0.5,
+    // width: 0,
+    // height: 30,
+    borderColor: 'gray',
+    borderWidth: 1
+    // marginHorizontal: 45,
   },
   inputs: {
     flex: 0.3,
@@ -214,8 +227,8 @@ const styles = StyleSheet.create({
   },
   btnText: {
     alignItems: 'center',
-    backgroundColor: 'darkblue',
-    height: 65,
+    backgroundColor: '#009AE0',
+    height: 60,
     padding: 15,
     width: 170,
     marginTop: 20,

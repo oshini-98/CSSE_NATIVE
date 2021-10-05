@@ -45,13 +45,25 @@ const Profile = props => {
           </View>
 
           <View style={styles.btn}>
+            <View style={styles.btnText}>
               <TouchableOpacity>
-                <Text style={styles.btnText}>TOP UP</Text>
+                <Image
+                  style={styles.addImage}
+                  source={require('../asserts/Images/outline_history_black_24dp.png')}
+                />
+                <Text style={styles.txt4}>TOP UP</Text>
               </TouchableOpacity>
+              </View>
               
+              <View style={styles.btnText}>
               <TouchableOpacity>
-                <Text style={styles.btnText}>HISTORY</Text>
+              <Image
+                  style={styles.addImage}
+                  source={require('../asserts/Images/outline_history_black_24dp.png')}
+                />
+                <Text style={styles.txt4}>HISTORY</Text>
               </TouchableOpacity>
+              </View>
 
             </View>
         </View>
@@ -79,12 +91,21 @@ const styles = StyleSheet.create({
     height: 650,
     width: 350,
   },
+  addImage: {
+    flex: 0.5,
+    width: 30,
+    height: 30,
+    borderColor: 'gray',
+    borderWidth: 1
+    // marginHorizontal: 45,
+  },
   cardImage: {
     flex: 0.2,
     // marginBottom: 20,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'red',
+
     // width: 100,
     // height: 200,
   },
@@ -115,12 +136,26 @@ const styles = StyleSheet.create({
   },
   btn: {
     flexDirection: 'row',
-    justifyContent: 'space-evenly',
+    justifyContent: 'center',
     marginBottom: 20,
     alignItems: 'center',
   },
   bImg: {
     flex: 0.2,
+  },
+  set: {
+    flex: 1,
+    flexDirection: 'row',
+    // marginVertical: 10,
+    colo: "red"
+  },
+  set1: {
+    // flex: 0.7,
+    // alignItems: 'flex-start',
+  },
+  set2: {
+    // flex: 0.3,
+    // alignItems: 'flex-end',
   },
   txt1: {
     // justifyContent: 'center',
@@ -133,7 +168,7 @@ const styles = StyleSheet.create({
   topView: {
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'blue',
+    backgroundColor: '#009AE0',
     paddingVertical: 10,
     height: 220,
     width: 420,
@@ -144,40 +179,41 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
   txt3: {
-    color: 'red',
+    color: '#BA1E32',
     fontWeight: 'bold',
     fontSize: 35,
+  },
+  txt4: {
+    flex: 0.5,
+    fontWeight: 'bold',
+    color: 'darkblue'
   },
   picker: {
     flex: 0.2,
   },
   btnText: {
-    alignItems: 'center',
-    fontSize: 18,
+    flex: 0.5,
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    // alignItems: 'center',
+    // fontSize: 18,
     backgroundColor: '#fff',
-    textAlign: 'right',
-    color: "blue",
     marginHorizontal: 20,
     padding: 12,
-    width: 150,
+    width: 170,
     borderRadius: 5,
-    borderBottomWidth: 5,
-    borderBottomColor: '#f2f2f2',
-    borderTopWidth: 5,
-    borderTopColor: '#f2f2f2',
-    borderLeftWidth: 5,
-    borderLeftColor: '#f2f2f2',
-    borderRightWidth: 5,
-    borderRightColor: '#f2f2f2',
+    borderWidth: 5,
+    borderColor: '#f2f2f2',
+
   },
   ipt: {
     marginTop: 100,
     alignItems: 'center',
-    marginBottom: 100,
+    marginBottom: 60,
     height: 95,
     width: 350,
     padding: 10,
-    backgroundColor: "lightblue",
+    backgroundColor: "#E9F8FD",
 
     // backgroundColor: 'gray',
   },
