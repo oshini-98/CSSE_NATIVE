@@ -2,6 +2,7 @@ import React from 'react';
 import {
   Text,
   View,
+  Image,
   ScrollView,
   TouchableWithoutFeedback,
   Keyboard,
@@ -10,8 +11,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
-//Recharge Smart Card
-const RSmartCard = props => {
+const Register = props => {
   return (
     <TouchableWithoutFeedback
       onPress={() => {
@@ -26,55 +26,47 @@ const RSmartCard = props => {
             <View style={styles.card}></View>
           </ImageBackground> */}
 
-          <View style={styles.topView}></View>
-
           <View style={styles.card2}>
-            
+            <View style={styles.cardImage}>
+              <Image
+                style={styles.image}
+                source={require('../asserts/Images/logo.png')}
+              />
+            </View>
 
-              <View style={styles.ipt}>
-              <TextInput
-                  placeholder="Enter Card Number"
-                  style={styles.inputField}
-                 />
-              </View>
+            <View style={styles.ipt}>
+              <TextInput placeholder="User ID" style={styles.inputField} />
+            </View>
 
-              <View style={styles.ipt}>
-              <TextInput
-                  placeholder="Exp Month/ Exp Year"
-                  style={styles.inputField}
-                 />
-              </View>
+            <View style={styles.ipt}>
+              <TextInput placeholder="Name" style={styles.inputField} />
+            </View>
 
-           
-              <View style={styles.ipt}>
+            <View style={styles.ipt}>
               <TextInput
-                  placeholder="CVC"
-                  style={styles.inputField}
-                 />
-              </View>
- 
-              <View style={styles.ipt}>
-              <TextInput
-                  placeholder="Amount"
-                  style={styles.inputField}
-                 />
-              </View>
-            
-            
-          <View>
-            <TouchableOpacity style={styles.btnText}>
-              <Text style={styles.btn}>TRANSFER</Text>
-            </TouchableOpacity>
+                placeholder="Date of Birth"
+                style={styles.inputField}
+              />
+            </View>
+
+            <View style={styles.ipt}>
+              <TextInput placeholder="Phone" style={styles.inputField} />
+            </View>
+
+            <View style={styles.ipt}>
+              <TextInput placeholder="Address" style={styles.inputField} />
+            </View>
+
+            <View style={styles.ipt}>
+              <TextInput placeholder="NIC Number" style={styles.inputField} />
+            </View>
+
+            <View>
+              <TouchableOpacity style={styles.btnText}>
+                <Text style={styles.btn}>REGISTER</Text>
+              </TouchableOpacity>
+            </View>
           </View>
-
-            <Text style={styles.txt1}>
-              By cotinuing you agree to accept our Privacy Policy & Terms of
-              Service.
-            </Text>
-          
-
-          </View>
-
         </View>
       </ScrollView>
     </TouchableWithoutFeedback>
@@ -85,28 +77,24 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    // alignItems: 'center',
-    // justifyContent: 'center',
     alignItems: 'center',
   },
   topView: {
     // flex: 0.3,
-    backgroundColor: '#009AE0',
+    backgroundColor: 'blue',
     height: 170,
     width: 450,
   },
   card2: {
-    justifyContent: 'center',
+    flex: 1,
+    // justifyContent: 'center',
     alignItems: 'center',
+    paddingTop: 55,
+    paddingHorizontal: 5,
     backgroundColor: '#fff',
-    paddingHorizontal: 10,
-    // paddingVertical: 10,
-    marginHorizontal: 20,
-    marginTop: -80,
-    marginBottom: 40,
-    height: 600,
-    width: 370,
-    borderColor: 'gray',
+    marginTop: 50,
+    height: 700,
+    width: 350,
     borderWidth: 0.3,
     borderRadius: 3,
   },
@@ -124,24 +112,21 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   cardImage: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: 150,
-    width: 150,
-    marginTop: 40,
-    borderColor: 'red',
-    borderWidth: 2,
-    // backgroundColor: 'red',
-    // paddingBottom: 60,
+    flex: 0.3,
+    // marginBottom: 20,
+    // justifyContent: 'center',
+    // alignItems: 'center',
+    backgroundColor: 'red',
+    marginBottom: 10,
+    width: 200,
+    height: 200,
   },
   image: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    width: 150,
-    height: 150,
-    // borderColor: 'red',
-    // berderWidth: 2
+    width: 200,
+    height: 200,
   },
   inputs: {
     flex: 0.3,
@@ -153,8 +138,9 @@ const styles = StyleSheet.create({
   },
   btn: {
     color: '#fff',
-    fontSize: 19,
+    fontSize: 20,
     fontWeight: 'bold',
+
   },
   bImg: {
     flex: 0.2,
@@ -198,27 +184,26 @@ const styles = StyleSheet.create({
   },
   btnText: {
     alignItems: 'center',
-    backgroundColor: '#009AE0',
-    height: 55,
-    padding: 10,
-    width: 170,
-    marginTop: 30,
-    borderRadius: 20,
-    marginBottom: 30
+    backgroundColor: "blue",
+    height: 60,
+    padding: 15,
+    width: 200,
+    // marginVertical: 10,
+    borderRadius: 30,
   },
   inputField: {
-    fontSize:17,
-    fontWeight: 'bold'
+    fontSize: 17,
+    fontWeight: 'bold',
   },
   ipt: {
-    marginBottom: 30,
+    marginBottom: 20,
     borderWidth: 0.3,
     borderColor: 'blue',
     height: 55,
     width: 320,
     borderRadius: 4,
-    paddingLeft: 8
+    paddingLeft: 8,
   },
 });
 
-export default RSmartCard;
+export default Register;
